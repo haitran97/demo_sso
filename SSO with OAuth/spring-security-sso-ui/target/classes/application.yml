@@ -1,0 +1,21 @@
+server:
+    port: 8082
+    servlet:
+      context-path: /ui
+      session:
+        cookie:
+          name: UISESSION
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      clientId: DemoClientId1234
+      clientSecret: DemoClientSecret4321
+      accessTokenUri: http://localhost:8081/auth/oauth/token  #đường dẫn từ provider mà ứng dụng sẽ đến và lấy access token
+      userAuthorizationUri: http://localhost:8081/auth/oauth/authorize #đường dẫn điều hướng người dùng đến để thực hiện xác thực (nếu cần)
+    resource:
+      userInfoUri: http://localhost:8081/auth/user/me #đường dẫn mà server sẽ trả về thông tin người dùng sau khi đã xác thực thành công
+spring:
+  thymeleaf:
+    cache: false        
